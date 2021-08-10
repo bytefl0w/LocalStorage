@@ -24,7 +24,7 @@
         localStorage = new LocalStorageService(js);
     }
     // SaveToLocalStorageAsynx uses localStorageData as the key when saving the data
-    // to localStorage
+    // to localStorage.
     async Task SaveToLocalStorageAsync()
     {
         await localStorage.SetItemAsync<string>(
