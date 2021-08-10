@@ -14,6 +14,10 @@
             @onclick="SaveToLocalStorageAsync">
         Save to Local Storage
     </button>
+    <button class="btn btn-primary"
+            @onclick="ReadFromLocalStorageAsync">
+        Read from Local Storage
+    </button>
 </div>
 
 @code {
@@ -30,5 +34,11 @@
         await localStorage.SetItemAsync<string>(
             "localStorageData",
             data);
+    }
+    // ReadFromLocalStorageAsync uses the localStorageData key when accessing the browser's localStorage
+    async Task ReadFromLocalStorageAsync()
+    {
+        data = await localStorage.GetItemAsync<string>(
+            "localStorageData");
     }
 } 
